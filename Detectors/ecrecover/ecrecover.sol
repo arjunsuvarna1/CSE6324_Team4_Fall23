@@ -1,5 +1,6 @@
 // Source: https://github.com/crytic/slither/blame/ab6939c2c851e4a0122f131df56d87d11f5df43f/tests/e2e/detectors/test_data/ecrecover/0.8.0/ecrecover.sol
 // Author: tuturu-tech - https://github.com/tuturu-tech
+// Added ECDSA check, reference: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/cryptography/ECDSA.sol
 
 pragma solidity ^0.8.18;
 

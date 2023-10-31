@@ -4,6 +4,11 @@ Module detecting improper use of ecrecover.
 Nonces and zero address check has been implemented by the Author - tuturu-tech - https://github.com/tuturu-tech
 Source: https://github.com/crytic/slither/pull/2015/files
 
+Added chainID check
+
+Added ECDSA check, reference: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/utils/cryptography/ECDSA.sol
+    
+
 """
 from collections import defaultdict
 from typing import DefaultDict, List, Tuple
