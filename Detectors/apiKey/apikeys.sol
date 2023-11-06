@@ -1,3 +1,6 @@
+//Source : https://stackoverflow.com/questions/62073437/how-to-make-an-api-call-in-solidity (API Key Structure)
+//Author: Patrick Collins
+
 pragma solidity ^0.8.18;
 
 contract APIData {
