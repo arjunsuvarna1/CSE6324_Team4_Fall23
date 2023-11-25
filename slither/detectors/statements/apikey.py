@@ -2,8 +2,8 @@
 Module detecting hardcoded APIs.
 
 References: 
-1. https://github.com/crytic/slither/pull/2015/files
-2. https://github.com/Skyscanner/sonar-secrets/blob/master/java/src/main/java/org/sonar/skyscanner/java/checks/APIKeys.java
+1. https://github.com/crytic/slither/pull/2015/files   (Detector structure) Author: tuturu-tech - https://github.com/tuturu-tech
+2. https://github.com/Skyscanner/sonar-secrets/blob/master/java/src/main/java/org/sonar/skyscanner/java/checks/APIKeys.java  (Regular expressions referenced from sonar secrets (skyscanner)) Author: adeptex - github.com/adeptex (skyscanner)
 3. https://www.geeksforgeeks.org/pattern-matching-python-regex/
 4. https://github.com/arjunsuvarna1/CSE6324_Team4_Fall23/blob/main/Detectors/ecrecover/ecrecover.py
 """
