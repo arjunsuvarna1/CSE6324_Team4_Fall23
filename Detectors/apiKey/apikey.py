@@ -6,6 +6,7 @@ References:
 2. https://github.com/Skyscanner/sonar-secrets/blob/master/java/src/main/java/org/sonar/skyscanner/java/checks/APIKeys.java
 3. https://www.geeksforgeeks.org/pattern-matching-python-regex/
 4. https://github.com/arjunsuvarna1/CSE6324_Team4_Fall23/blob/main/Detectors/ecrecover/ecrecover.py
+5. AWS Key and Bitly regular expression - https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7180102&tag=1
 """
 from typing import DefaultDict, List, Tuple
 from slither.utils.output import Output
@@ -65,8 +66,18 @@ def _detect_apikey(function: Function,) -> List[Tuple[Function, DefaultDict[Loca
     for node in function.nodes:
         for ir in node.irs:
             expression = str(ir.expression)
+            # Regular expressions used:
+            # 1. Sonar qube
+            # 2. AWS Client ID format
+            # 3. AWS Secret key format
+            # 4. Bitly Client ID format
+            # 5. Bitly Secret key format
             if re.compile('(api|gitlab|github|slack|google|aws|jenkins)_?(key|token|secret|auth)?'
-                          ).search(expression):
+                    ).search(expression) or re.compile(
+                    'AKIA[0-9A-Z]{16}').search(expression) or re.compile(
+                    '[0-9a-zA-Z/+]{40}').search(expression)or re.compile(
+                    '[0-9a-zA-Z_]{5,31}').search(expression) or re.compile(
+                    'R_[0-9a-f]{32}').search(expression):
                 results.append(node)
             
     return (results) 
