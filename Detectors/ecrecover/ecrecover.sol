@@ -51,7 +51,9 @@ contract A {
                 keccak256(abi.encode(info))
             )
         );
-        if((r>0 && uint256(s) <= 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0  && s>0 && (v==0 || v==1))){
+        if((r>0 && 
+        uint256(s) <= 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0  
+        && s>0 && (v==0 || v==1))){
             address receiver = ecrecover(data, v, r, s);
             require(receiver != address(0), "ECDSA: invalid signature");
             mint(info.tokenId, receiver);
@@ -124,7 +126,8 @@ contract A {
         bytes32 data = keccak256(
             abi.encodePacked("\x19Ethereum Signed Message:\n32", hash, chainId)
         );
-        if((r > 0 && uint256(s) <= 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0 && s>0 && (v == 0 || v == 1))){
+        if((r > 0 && uint256(s) <= 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0 && 
+        s>0 && (v == 0 || v == 1))){
             address receiver = ecrecover(data, v, r, s);
             require(receiver != address(0), "ECDSA: invalid signature");
             mint(info.tokenId, receiver);
@@ -141,7 +144,9 @@ contract A {
         bytes32 data = keccak256(
             abi.encodePacked("\x19Ethereum Signed Message:\n32", hash, nonces[msg.sender]++)
         );
-        if((r > 0 && s>0 && uint256(s) <= 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0 && (v == 0 || v == 1))){
+        if((r > 0 && s>0 && 
+        uint256(s) <= 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0 && 
+        (v == 0 || v == 1))){
             address receiver = ecrecover(data, v, r, s);
             require(receiver != address(0), "ECDSA: invalid signature");
             mint(info.tokenId, receiver);

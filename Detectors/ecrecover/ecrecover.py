@@ -170,8 +170,11 @@ def _s_ecdsa_validation(var: LocalVariable, function: Function) -> bool:
                 expression = str(ir.expression)
                 if isinstance(ir, Binary):
                     if (
-                        ir.type == BinaryType.GREATER or ir.type == BinaryType.LESS or ir.type == BinaryType.LESS_EQUAL or ir.type == BinaryType.GREATER_EQUAL
-                    ) and (("s > 0") in expression or ("0 < s") in expression) or (("uint256(s) <= 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0") in expression):
+                        ir.type == BinaryType.GREATER or ir.type == BinaryType.LESS or 
+                        ir.type == BinaryType.LESS_EQUAL or ir.type == BinaryType.GREATER_EQUAL
+                    ) and (("s > 0") in expression or ("0 < s") in expression) or (
+                    ("uint256(s) <= 0x7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF5D576E7357A4501DDFE92F46681B20A0"
+                    ) in expression):
                         return True
     return False
 
