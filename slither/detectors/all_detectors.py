@@ -92,5 +92,6 @@ from .functions.cyclomatic_complexity import CyclomaticComplexity
 from .operations.cache_array_length import CacheArrayLength
 from .statements.incorrect_using_for import IncorrectUsingFor
 from .statements.ecrecover import Ecrecover
-from .statements.apiKey import ApiKey
+from .statements.apikey import ApiKey
+from .statements.passwords import Passwords
 from .operations.encode_packed import EncodePackedCollision
