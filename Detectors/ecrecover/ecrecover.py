@@ -3,6 +3,7 @@ Module detecting improper use of ecrecover.
 
 Nonces and zero address check has been implemented by the Author - tuturu-tech - https://github.com/tuturu-tech
 Source: https://github.com/crytic/slither/pull/2015/files
+ECDSA Check refrence : Ethereum: A Secure Decentralized Generalized Transaction Ledger - https://ethereum.github.io/yellowpaper/paper.pdf 
 
 Added chainID check
 
